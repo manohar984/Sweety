@@ -1,36 +1,25 @@
-# ============================================================
-# Root .gitignore — covers both server/ and client/
-# ============================================================
-
-# Dependencies (never commit these — they are restored via npm install)
 node_modules/
 
-# Environment variable files — CONTAIN SECRETS, never commit
 .env
 .env.local
 .env.production
 .env.*.local
 
-# Build output
 dist/
 dist-ssr/
 build/
 
-# Log files
 logs/
 *.log
 npm-debug.log*
 
-# OS generated files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Editor files
 .vscode/settings.json
 .idea/
 *.suo
 *.swp
 
-# Test coverage output
 coverage/
