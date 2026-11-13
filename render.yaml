@@ -1,0 +1,29 @@
+# ============================================================
+# Render Blueprint — backend only
+# Frontend is deployed separately on Vercel (see client/vercel.json)
+#
+# Render Dashboard → New → Blueprint → select this repository.
+# Render reads this file and creates the web service below.
+# ============================================================
+services:
+  - type: web
+    name: sweety-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      # Supabase connection string — paste it in the Render dashboard,
+      # never into this file. sync: false prompts for the value on first deploy.
+      - key: DATABASE_URL
+        sync: false
+      # Long random string — Render generates and stores it for you.
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 1d
+      - key: NODE_ENV
+        value: production
