@@ -1,31 +1,43 @@
 .reports-page {
   min-height: 100vh;
-  background: #f4f6f9;
+  background-color: var(--bg-page);
   display: flex;
   flex-direction: column;
 }
 
 .reports-main {
-  max-width: 760px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
-  padding: 28px 20px;
+  padding: 32px 24px 48px;
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
+.reports-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .reports-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.reports-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .report-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .report-section-header {
@@ -33,48 +45,68 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .report-section-label {
-  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--primary-700);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0;
 }
 
 .date-picker-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .date-picker-group label {
-  font-size: 0.8rem;
-  color: #64748b;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
-.date-picker-group input[type="date"] {
-  padding: 5px 10px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 7px;
+.date-input-wrap input[type="date"] {
+  padding: 7px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
-  font-family: inherit;
-  color: #1e293b;
-  background: #fff;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: #ffffff;
   outline: none;
   cursor: pointer;
-  transition: border-color 0.15s;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
 }
 
-.date-picker-group input[type="date"]:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+.date-input-wrap input[type="date"]:hover {
+  border-color: var(--border-hover);
 }
 
-@media (max-width: 540px) {
-  .reports-main { padding: 16px 12px; }
+.date-input-wrap input[type="date"]:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+@media (max-width: 640px) {
+  .reports-main {
+    padding: 20px 14px 36px;
+    gap: 22px;
+  }
+
+  .reports-title {
+    font-size: 1.45rem;
+  }
+
+  .report-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
